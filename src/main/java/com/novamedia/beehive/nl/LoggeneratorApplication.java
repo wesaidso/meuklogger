@@ -2,6 +2,7 @@ package com.novamedia.beehive.nl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,12 +27,16 @@ public class LoggeneratorApplication implements CommandLineRunner {
 
     private void functionLoggerTask(String text, int sleep) {
         long count = 0;
-        while (count <= 1000000) {
+        while (count <= 9999) {
             try {
                 Thread.sleep(sleep);
             } catch (InterruptedException e) {
                 LOGGER.error("Could not sleep task {}", text, e);
             }
+
+            MDC.put("processType", "SALES");
+            MDC.put("processId", String.valueOf(count));
+
             LOGGER.info("{} of Function-{}", text, count++);
         }
     }
