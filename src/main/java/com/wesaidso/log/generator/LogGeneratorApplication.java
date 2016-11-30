@@ -59,7 +59,7 @@ public class LogGeneratorApplication implements CommandLineRunner {
             MDC.put("actionType", action.name());
             MDC.put("processId", String.valueOf(index));
 
-            LOGGER.info("{} of Function-{}", action.name(), index);
+            LOGGER.info("{} of Function-{} for process {}", action.name(), index, process.name());
         }
     }
 
