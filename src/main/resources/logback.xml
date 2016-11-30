@@ -9,6 +9,7 @@
     </appender>
 
     <appender name="JSON" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>false</append>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>info</level>
         </filter>

@@ -1,4 +1,4 @@
-package com.novamedia.beehive.nl;
+package com.wesaidso.log.generator;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
